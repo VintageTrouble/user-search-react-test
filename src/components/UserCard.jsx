@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import '../styles/Components/link.css'
 
-function UserCard({user, className, onClick}) {
+function UserCard({user, className}) {
     return (
         <Link to={"/user/" + user.id} className='link hidden'>
             <div

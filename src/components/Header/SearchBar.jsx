@@ -11,6 +11,7 @@ function SearchBar({data, placeholder}) {
 
     const handleOutsideClick = (event) => {
         const path = event.path || (event.composedPath && event.composedPath());
+
         if (!path.includes(searchRef.current)) {
             setIsOpened(false);
         } else {
@@ -34,9 +35,10 @@ function SearchBar({data, placeholder}) {
         }
     }
 
+    //проверка на нажатие по экрану
+    //при нажати выполняется handleOutsideClick
     React.useEffect(() => {
         document.body.addEventListener('click', handleOutsideClick);
-        
       }, []);
 
     return (
@@ -48,7 +50,7 @@ function SearchBar({data, placeholder}) {
                 placeholder={placeholder}
                 onChange={(e) => onFilterChanged(e)} />
             </form>
-            {isOpened === true && (
+            {isOpened && (
                 <div className="data-result">
                     {filteredData 
                         ? 

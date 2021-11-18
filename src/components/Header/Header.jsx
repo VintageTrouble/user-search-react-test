@@ -8,7 +8,7 @@ function Header({data}) {
             <Logo />
             <div className="search">
                 <SearchBar 
-                    data={data}
+                    data={data} //data for search drop menu
                     placeholder="Search user..." />
             </div>
         </div>

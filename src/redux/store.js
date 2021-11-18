@@ -3,8 +3,7 @@ import thunk from 'redux-thunk';
 
 import rootReducer from './reducers';
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; //left part for chrome extension
-
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; //левая часть для расширения chrome
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
 
 export default store;

@@ -5,11 +5,6 @@ export const setUsers = (items) => ({
     payload: items,
 });
 
-export const setUser = (data) => ({
-    type: 'SET_USER',
-    payload: data,
-});
-
 export const fetchUsers = () => (dispatch) => {
     API.get('users')
         .then(
@@ -19,6 +14,12 @@ export const fetchUsers = () => (dispatch) => {
             }
         );
 };
+
+
+export const setUser = (data) => ({
+    type: 'SET_USER',
+    payload: data,
+});
 
 export const fetchUser = (id) => (dispatch) => {
     API.get(`users/${id}`)

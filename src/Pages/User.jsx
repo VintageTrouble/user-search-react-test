@@ -8,12 +8,12 @@ import '../styles/user.css'
 
 function User() {
     const { id } = useParams();
-    const user = useSelector(({ users }) => users.items.find(item => item.id === parseInt(id, 10)));
-    const onImageEror = (e) => {
-        e.target.onerror = null; 
-        e.target.src="../resources/img/default_user.png";
-        //e.target.src={defaultUserImage}
-    }
+    //Подходит для поиска из небольшого объема данных
+    //Возможно, лучшим решением бы было брать отфильтрованные данные из апи?
+    const user = useSelector(
+        ({ users }) => 
+            users.items.find(item => item.id === parseInt(id, 10))
+    );
 
     return (
         <>
@@ -24,7 +24,8 @@ function User() {
                         className="user-photo"
                         src={user.image || defaultUserImage} 
                         alt="User"
-                        onError={(e) => onImageEror(e)} />
+                        //onError={(e) => onImageEror(e)} 
+                        />
                     <div className="user-main-info">
                         <h1>{user.username}</h1>
                         <p>{user.name}</p>
