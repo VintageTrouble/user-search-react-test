@@ -1,0 +1,22 @@
+.btn{
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: transparent;
+
+    border: 2px solid green;
+    border-radius: 15px;
+
+    transition-duration: 0.2s;
+
+    cursor:pointer;
+}
+
+.btn:hover{
+    background-color: green;
+    color: white;
+}
+
+.btn:active{
+    transition-duration: 0s;
+    opacity: 0.6;
+}
