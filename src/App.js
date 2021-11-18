@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Route, Routes} from 'react-router-dom';
 
 import { Header } from './components';
-import { Home } from './Pages';
+import { Home, User } from './Pages';
 import { fetchUsers } from './redux/actions/users';
 
 
@@ -14,14 +14,15 @@ function App() {
 
   React.useEffect(() =>{
     dispatch(fetchUsers());
-  })
+  }, [])
 
   return (  
     <>
       <Header data={items} />
       <div className="app-content">
         <Routes>
-            <Route exact path='/' element={<Home/>} />
+          <Route path='/user/:id' element={<User />} />
+          <Route exact path='/' element={<Home />} />
         </Routes>
       </div>
     </>

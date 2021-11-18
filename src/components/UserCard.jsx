@@ -1,10 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
-function UserCard({user, className}) {
+import '../styles/Components/link.css'
+
+function UserCard({user, className, onClick}) {
     return (
-        <div className={className}>
-            <p>{user.name}</p>
-        </div>
+        <Link to={"/user/" + user.id} className='link hidden'>
+            <div
+                className={className}>
+                <p>{user.name}</p>
+            </div>
+        </Link>
     )
 }
 

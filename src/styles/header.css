@@ -3,7 +3,7 @@
     position: sticky;
     margin: 0px;
 
-    background-color: rgba(196, 155, 44, 0.795);
+    background-color: rgba(36, 83, 114, 0.795);
 
     display: flex;
     flex-wrap: nowrap;
@@ -12,6 +12,7 @@
 }
 
 .logo{
+    color: whitesmoke;
     margin: 2px 15px;
     font-size: 22;
     font-family: 'Roboto Slab', serif;

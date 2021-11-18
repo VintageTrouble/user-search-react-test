@@ -20,3 +20,11 @@
     transition-duration: 0s;
     opacity: 0.6;
 }
+
+.none-btn{
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+
+    cursor: pointer;
+}
